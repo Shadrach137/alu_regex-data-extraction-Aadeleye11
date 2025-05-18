@@ -5,7 +5,7 @@ from pathlib import Path
 
 pattern = re.compile(
     r"(#\w+)|"                            # Hashtags
-    r"(\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4})|"  # Credit cards
+    r"(\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4})|"  # Credit card numbers
     r"(\(?\d{3}\)?[ .-]?\d{3}[ .-]?\d{4})|"    # Phone numbers
     r"([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63})",  # Emails
     re.IGNORECASE,
