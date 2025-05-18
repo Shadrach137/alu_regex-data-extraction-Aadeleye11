@@ -31,7 +31,7 @@ A zero-dependency Python script that **pulls hashtags, credit-card numbers, US/C
 ## 📕 Resources Used
 
 * Harvard CS50 Regex Course
-* Git Co-Pilot 
+* GitHub Co-Pilot 
 
 ---
 ## 🔧 Prerequisites
