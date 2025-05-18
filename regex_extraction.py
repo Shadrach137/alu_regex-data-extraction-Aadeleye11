@@ -16,7 +16,7 @@ def extract(text):
     for match in pattern.finditer(text):
         for i, group in enumerate(match.groups(), start=1):
             if group:
-                types = ['hashtag', 'credit', 'phone', 'email']
+                types = ['Hashtag', 'Credit', 'Phone', 'Email']
                 results.append({'type': types[i-1], 'value': group})
                 break
     return results
@@ -38,11 +38,28 @@ def main():
             text = sys.stdin.read()
 
     matches = extract(text)
+    counts = {'Hashtag': 0, 'Credit': 0, 'Phone': 0, 'Email': 0}
+
     if matches:
+        col_w = 42
+        border = "-" * (col_w + 11)
+        print("\n\n---------------Pattern Matches---------------")
+        print(f"\n{border}\n| {'Value':<{col_w}}| Type   |\n{border}")
+
         for m in matches:
-            print(f"{m['type']}: {m['value']}")
+            print(f"| {m['value'][:col_w-1]:<{col_w}}| {m['type'].capitalize():6}|")
+            counts[m['type']] += 1
+
+        print(border)
     else:
         print("No matches found.")
+    
+    if matches:
+        for m in matches:
+            counts[m['type']] += 1
+        print("\n------Pattern Count------")
+        for k, v in counts.items():
+            print(f" {k} → {v}")
 
 if __name__ == "__main__":
     main()
