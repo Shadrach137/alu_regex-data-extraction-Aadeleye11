@@ -49,8 +49,8 @@ def main():
             text = sys.stdin.read()
     
     matches = extract(text)
-    if mathces:
-        for m in mathces:
+    if matches:
+        for m in matches:
             print(f"{m['type']}: {m['value']}") 
     else:
         print("No matches found.")
