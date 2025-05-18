@@ -1,0 +1,67 @@
+########################################
+###  SAMPLE DATA FOR REGEX EXTRACTION ###
+########################################
+
+Hello Team,
+
+Below is a chaotic dump of marketing copy, dev chatter, logs, and random notes.  
+Your script should cleanly pluck out **hashtags, credit-card numbers, US/CA phone
+numbers, and emails**—ignore everything else.
+
+────────────────────────────────────────
+SECTION 1: SOCIAL & TAG SPAM
+────────────────────────────────────────
+#HelloWorld #AI_2025 #data_science #CaseStudy #UPPERCASE #lowercase
+Random mid-sentence tags like so #MixedInSentence are common.
+Watch out for super_long_hashtags_that_keep_going_but_stop_before_101_chars
+Edge: hash#tag → should NOT match (hash immediately followed by another #).
+
+────────────────────────────────────────
+SECTION 2: EMAIL ROULETTE
+────────────────────────────────────────
+user@example.com
+firstname.lastname@company.co.uk
+UPPERCASE@LOUDMAIL.IO
+cool_dev+test@sub.code.org
+weird-mailer@subdomain.mail-server.travel
+edge@domain   .com   (spacing → shouldn’t match)
+notAnEmail@ (missing domain)
+
+────────────────────────────────────────
+SECTION 3: CONTACT NUMBERS
+────────────────────────────────────────
+(123) 456-7890
+123-456-7890
+123.456.7890
+123 456 7890    ← space-separated (bonus if you catch it)
++1 (321) 654-0987  ← intl prefix, parentheses
+(000)000-0000      ← edge: no spaces
+Call centre: (555)-555-5555 ext. 42  ← ext. should be ignored.
+
+────────────────────────────────────────
+SECTION 4: BILLING CHAOS
+────────────────────────────────────────
+Valid cards:
+1234 5678 9012 3456
+9999-8888-7777-6666
+Hidden in text: “pay with 4321-0000-1111-2222 asap”
+Broken: 1234-567-890-1234 (wrong group sizes, ignore)
+Continuous digits: 4444444444444444  (ignore per spec)
+
+────────────────────────────────────────
+SECTION 5: COMBINED MADNESS
+────────────────────────────────────────
+Hi #Team, email me (alice.wonder@wonder.land) or call 987-654-3210.
+Invoice shows card 2468-1357-2468-1357.  
+Tweet “#regex4life!” and CC bob+demo@corp.net.  
+Card masquerade: <code>1111&nbsp;2222&nbsp;3333&nbsp;4444</code>
+Phone in parentheses no gap: (222)333-4444.
+
+────────────────────────────────────────
+SECTION 6: LOG-LIKE NOISE, SHOULD NOT TRIGGER
+────────────────────────────────────────
+[2025-05-18 12:34:56] INFO UserID=12345 Action=LOGIN IP=192.168.0.5
+# (just a comment line starting with hash)
+CREDIT: $19.99   PHONE: 867-5309 (Jenny?)   EMAIL: not@an@email
+CardNo=1234-5678-9012  (only 3 groups, ignore)
+CALL-ID=ABC-123-XYZ
