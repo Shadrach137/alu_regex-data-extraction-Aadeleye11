@@ -2,7 +2,7 @@
 
 A zero-dependency Python script that **pulls hashtags, credit-card numbers, US/Canadian phone numbers, and email addresses from any text**—all through one tidy regular-expression pattern.
 
-> **Repo:** `alu_regex-data-extraction-<YourUsername>`  
+> **Repo:** `alu_regex-data-extraction-Aadeleye11`  
 > **Author:** Aadeleye11 (African Leadership University)
 
 ---
