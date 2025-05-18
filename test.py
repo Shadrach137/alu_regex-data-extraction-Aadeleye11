@@ -8,6 +8,11 @@ def test_extract():
     Credit Cards: 1234 5678 9012 3456, 1234-5678-9012-3456
     """
     results = extract(test)
+    # Print the classification of each match
+    for r in results:
+        print(f"Value: {r['value']}, Type: {r['type']}")
+    # Check if the expected types are present
+        
     types = [r['type'] for r in results]
     
     assert 'phone' in types, "Phone number not found"   
