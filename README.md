@@ -17,7 +17,7 @@ A zero-dependency Python script that **pulls hashtags, credit-card numbers, US/C
 | **Email Address** | `user@example.com` `first.last@uni.edu` |
 
 * Accepts **file input** or **paste mode**—your choice.  
-* Clear CLI output: `type → value`.  
+* Clear CLI (Command Line Interface) output: `type → value`.  
 * Fully commented, beginner-friendly code (CS50-style).
 
 ---
@@ -44,6 +44,6 @@ cd alu_regex-data-extraction-<YourUsername>
 # 2 – Run with a text file
 python regex_extractor.py -f sample.txt
 
-# 3 – Or run and paste text, then send EOF
+# 3 – Or run and paste text, then send EOF (End of File), Ctrl + D for Linux and MacOS, Ctrl + Z for Windows and press ENTER
 python regex_extractor.py
 
