@@ -2,7 +2,7 @@
 
 A zero-dependency Python script that **pulls hashtags, credit-card numbers, US/Canadian phone numbers, and email addresses from any text**—all through one tidy regular-expression pattern.
 
-> **Repo:** `alu_regex-data-extraction-<YourUsername>`  
+> **Repo:** `alu_regex-data-extraction-Aadeleye11`  
 > **Author:** Aadeleye11 (African Leadership University)
 
 ---
@@ -17,8 +17,15 @@ A zero-dependency Python script that **pulls hashtags, credit-card numbers, US/C
 | **Email Address** | `user@example.com` `first.last@uni.edu` |
 
 * Accepts **file input** or **paste mode**—your choice.  
-* Clear CLI output: `type → value`.  
+* Clear CLI (Command Line Interface) output: `type → value`.  
 * Fully commented, beginner-friendly code (CS50-style).
+
+
+## Edge Cases Handled
+* Credit cards with dashes, spaces or none.
+* Phone numbers with parentheses, dots, or dashes.
+* Emails with subdomains, + tags, and mixed case.
+* Hashtags up to 100 characters (letters/digits/underscores).
 
 ---
 ## 📕 Resources Used
@@ -38,12 +45,13 @@ A zero-dependency Python script that **pulls hashtags, credit-card numbers, US/C
 
 ```bash
 # 1 – Clone your fork
-git clone https://github.com/<YourUsername>/alu_regex-data-extraction-<YourUsername>.git
+git clone https://github.com/<YourUsername>/alu_regex-data-extraction-Aadeleye11.git
 cd alu_regex-data-extraction-<YourUsername>
 
 # 2 – Run with a text file
 python regex_extractor.py -f sample.txt
 
-# 3 – Or run and paste text, then send EOF
+# 3 – Or run and paste text, then send EOF (End of File), Ctrl + D for Linux and MacOS, Ctrl + Z for Windows and press ENTER
 python regex_extractor.py
+
 
