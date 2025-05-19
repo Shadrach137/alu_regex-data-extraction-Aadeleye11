@@ -88,9 +88,9 @@ python regex_extractor.py
 | 123.456.7890                              | Phone |
 | user@example.com                          | Email |
 | firstname.lastname@company.co.uk          | Email |
-| \#helloWorld                               | Hashtag|
-| \#2025Trends                               | Hashtag|
-| \#data_science                             | Hashtag|
+| #helloWorld                               | Hashtag|
+| #2025Trends                               | Hashtag|
+| #data_science                             | Hashtag|
 | 1234 5678 9012 3456                       | Credit|
 | 1234-5678-9012-3456                       | Credit|
 -----------------------------------------------------
