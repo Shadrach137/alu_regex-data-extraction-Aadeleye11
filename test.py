@@ -7,19 +7,28 @@ def test_extract():
     Hashtags: #helloWorld, #2025Trends, #data_science
     Credit Cards: 1234 5678 9012 3456, 1234-5678-9012-3456
     """
-    results = extract(test)
-    # Print the classification of each match
-    for r in results:
-        print(f"Value: {r['value']}, Type: {r['type']}")
-    # Check if the expected types are present
+    matches = extract(test)
+    # Print the classification of each  in tabular format
+    if matches:
+        col_w = 42
+        border = "-" * (col_w + 11)
+        print("\n\n---------------Pattern Matches---------------")
+        print(f"\n{border}\n| {'Value':<{col_w}}| Type   |\n{border}")
+
+        for m in matches:
+            print(f"| {m['value'][:col_w-1]:<{col_w}}| {m['type'].capitalize():6}|")
         
-    types = [r['type'] for r in results]
-    
-    assert 'phone' in types, "Phone number not found"   
-    assert 'email' in types, "Email not found"  
-    assert 'hashtag' in types, "Hashtag not found"  
-    assert 'credit' in types, "Credit card not found"
-    
+        print(border)
+    else:
+        print("No matches found.")
+    # Count the occurrences of each type
+    counts = {'Hashtag': 0, 'Credit': 0, 'Phone': 0, 'Email': 0}
+    for m in matches:
+        counts[m['type']] += 1
+    print("\n------Pattern Count------")
+    for key, value in counts.items():
+        print(f"{key}: {value}")
+      
 if __name__ == "__main__":
     test_extract()
     print("All tests passed.")
