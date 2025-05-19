@@ -41,6 +41,15 @@ A zero-dependency Python script that **pulls hashtags, credit-card numbers, US/C
 
 ---
 
+##  Testing
+
+Run our lightweight test script to verify the extractor still hits all four pattern types:
+
+```bash
+python test_extract.py
+```
+---
+
 ## 🚀 Quick Start
 
 ```bash
