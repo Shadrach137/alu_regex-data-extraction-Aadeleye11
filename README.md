@@ -63,4 +63,44 @@ python regex_extractor.py -f sample.txt
 # 3 – Or run and paste text, then send EOF (End of File), Ctrl + D for Linux and MacOS, Ctrl + Z for Windows and press ENTER
 python regex_extractor.py
 
+```
+---
+
+## 🧪 Sample Input and Result
+### Test
+```bash
+    test = """
+    Phone numbers: (123) 456-7890, 123-456-7890, 123.456.7890
+    Emails: user@example.com, firstname.lastname@company.co.uk
+    Hashtags: #helloWorld, #2025Trends, #data_science
+    Credit Cards: 1234 5678 9012 3456, 1234-5678-9012-3456
+    """
+```
+### Result
+```bash
+---------------Pattern Matches---------------
+
+-----------------------------------------------------
+| Value                                     | Type   |
+-----------------------------------------------------
+| (123) 456-7890                            | Phone |
+| 123-456-7890                              | Phone |
+| 123.456.7890                              | Phone |
+| user@example.com                          | Email |
+| firstname.lastname@company.co.uk          | Email |
+| #helloWorld                               | Hashtag|
+| #2025Trends                               | Hashtag|
+| #data_science                             | Hashtag|
+| 1234 5678 9012 3456                       | Credit|
+| 1234-5678-9012-3456                       | Credit|
+-----------------------------------------------------
+
+------Pattern Count------
+Hashtag: 3
+Credit: 2
+Phone: 3
+Email: 2
+All tests passed
+```
+
 
